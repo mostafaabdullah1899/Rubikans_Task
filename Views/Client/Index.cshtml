@@ -1,0 +1,37 @@
+﻿@model List<Client>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<a asp-action="Add" asp-controller="Client"  class="btn btn-success"> Add Client</a>
+
+<table id="add" class="table table-bordered"> 
+  
+        <tr>
+            <td>Name</td>
+            <td>Mobile</td>
+            <td>Address</td>
+            <td>Email</td>
+            <td>Balance</td>
+            <td>Details</td>
+            <td>Edit</td>
+            <td>Delete</td>
+        </tr>
+    @foreach (var item in Model)
+    {
+   
+        <tr>
+            <td> @item.Name</td>
+            <td> @item.Mobile</td>
+             <td> @item.Address</td>
+              <td> @item.Email</td>
+               <td> @item.Balance</td>
+               <td> <a href="\Client\Details\@item.Id">Details</a></td>
+                <td> <a href="\Client\Update\@item.Id">Edit</a></td>
+                 <td> <a href="\Client\Delete\@item.Id">Delete</a></td> 
+        </tr>  
+    }
+</table>
+

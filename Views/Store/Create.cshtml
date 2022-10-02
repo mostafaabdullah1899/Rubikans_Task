@@ -1,0 +1,60 @@
+﻿
+<div class="container-fluid" style="direction:ltl">
+    <h1 class="text-start color">Sales Invoice</h1>
+
+    <div class="row">
+        <div class="col-3">
+            <label class="form-label">Customer</label>
+            <select id="client" class="form-control" >
+                <option selected > Select Option </option>
+            </select>
+        </div>
+        <div class="col-3">
+            <label class="form-label">Store</label>
+            <select id="inventor" class="form-control text-center" >
+                <option selected>Select Option </option>
+            </select>
+        </div>
+        <div class="col-3">
+            <label class="form-label">Products</label>
+            <select id="item" class="form-control text-center" >
+                <option selected>Select Option </option>
+            </select>
+        </div>
+
+        <div class="col-3">
+            <label class="form-label">Total Cost</label>
+            <input class="form-control text-center" value="0.00" disabled id="totalAmount" />
+        </div>
+    </div>
+
+
+    <hr />
+    <div class="row mt-3">
+        <table class="table table-striped table-dark text-center">
+            <thead>
+                <tr>
+                    <th>
+                        Product Name
+                    </th>
+                    <th>
+                        Quantity
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                    <th>
+                     Total
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="tBody">
+            </tbody>
+        </table>
+    </div>
+    <button id="save" class="btn btn-success">Invoice Print</button>
+</div>
+
+@section Scripts {
+    <script src="~/js/invoice.js"></script>
+}

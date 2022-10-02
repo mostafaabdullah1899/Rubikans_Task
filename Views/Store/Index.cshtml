@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Task_Rubikans.Models.SaleInvoice>
+
+@{
+    ViewData["Title"] = "Sales Invoice";
+}
+
+<h1>Sales Invoice</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Create New</a>
+</p>
+  <table id="add" class="table table-bordered"> 
+      <thead>
+        <tr>
+            <th>ClientId</th>
+            <th>ClientName</th>
+            <th>TotalQty</th>
+            <th>TotalAmount</th>
+            <th>Date</th>
+            <th>Options</th>
+        </tr>
+        </thead>
+    @foreach (var item in Model)
+    {
+      <tbody>
+        <tr>
+            <td> @item.ClientId</td>
+            <td> @item.ClientName</td>
+            <td> @item.TotalQty</td>
+            <td> @item.TotalAmount</td>
+            <td> @item.Date</td>   
+            <td>
+              <button invoiceId="@item.Id" class="btn btn-primary print">Print</button>
+            </td>
+        </tr> 
+      </tbody>
+    }
+</table>
+
+<style>
+    thead{background-color:#283342;
+
+         }
+    tbody{background-color:#009099;
+
+         }
+         td,th{
+             color:#fff
+         }
+</style>
